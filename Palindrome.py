@@ -5,8 +5,8 @@ s=[]
 while i<n:
     s.append(S[n-i-1])
     if s[i]!=S[i]:
-        print(S+' is a palindrome')
+        print(S+' is not a palindrome')
         break
     i+=1
 if i==n:
-    print(S+' is not a palindrome')
+    print(S+' is a palindrome')

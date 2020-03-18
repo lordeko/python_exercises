@@ -1,3 +1,4 @@
+#it works only with words, but it's a perfect sub-routine for sentences ->check Palindrome_sentences.py
 S=input('Write the word to check... \n')
 i=0
 n=len(S)

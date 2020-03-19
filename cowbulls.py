@@ -14,22 +14,26 @@ import random as rnd
 
 n=[]
 for i in range(4):
-    n.append(str(rnd.randint(0,9)))
+    n.append(str(rnd.randint(0,9))) #random generate number and convert in string
 
-#print(n)
+#print(n) -> very useful for debug XD
 
 g=[]
 cnt=0
 while g!=n:
     cnt+=1
     b=c=0
-    g=input('guess the number (4-digits)').split()
-    print(g)
+    g=input('guess the number (4-digits)').split() #input a string made by 4 digit (string format)
+    print(g) #just tu check
     for i in range(4):
-        if n[i]==g[i]:
-            c+=1
+        if n[i]==g[i]: #in Python string is a list of char, amazing!
+            c+=1       #count your cows
         else:
-            if n.count(g[i])>g[:i].count(g[i]):
+           # g(i) not eq n(i) -> if n contains more "g[i]", this g[i] is a bull
+           # ex.:          n= 1 2 0 2 and g = 2 1 0 3
+           # for i=0.....  n(0)=1!=2=g(0) -> BUT n contains two "2" and g(0) contains one "2" -> IS A BULL
+           # for i=1.....  n(1)=2!=1=g(1) -> BUT n contains one "1" and g(0:1),remember python exclude right element, contains one "1" -> IS A BULL
+            if n.count(g[i])>g[:i].count(g[i]): 
                 b+=1
     print(f'You have {b} bulls and {c} cows... try again!')
 print(f'WHOA!YOU DID IT! You used {cnt} guesses')

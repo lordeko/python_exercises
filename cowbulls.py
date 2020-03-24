@@ -24,6 +24,9 @@ while g!=n:
     cnt+=1
     b=c=0
     g=input('guess the number (4-digits)').split() #input a string made by 4 digit (string format)
+    while len(g)!=4:
+        print('Hey bro tell me 4 digits please')
+        g=input('guess the number (4-digits)').split()
     print(g) #just tu check
     for i in range(4):
         if n[i]==g[i]: #in Python string is a list of char, amazing!
